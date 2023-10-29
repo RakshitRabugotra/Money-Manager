@@ -5,7 +5,6 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -52,7 +51,7 @@ body {
   height: 100vh;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--ambient-dark);
+  background-color: var(--dark);
   color: var(--light);
   overflow: auto;
 }
