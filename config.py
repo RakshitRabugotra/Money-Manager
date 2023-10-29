@@ -4,10 +4,7 @@ import redis
 load_dotenv()
 
 class ApplicationConfig:
-    try:
-        SECRET_KEY = os.environ["SECRET_KEY"]
-    except KeyError:
-        SECRET_KEY = "admslkamdkasldnajndjs"
+    SECRET_KEY = os.environ["SECRET_KEY"]
 
     SQLALCHEMY_TRACK_NOTIFICATIONS = False
     SQLALCHEMY_ECHO = True
