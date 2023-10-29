@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block head %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A web-app to write your expenses and see where you're spending">
+    <link rel= "stylesheet" type= "text/css" href="static/css/style.css">
+    <script src="static/js/script.js"></script>
+    <title>{% block title %}CashPulse{% endblock %}</title>
+    <link rel="icon" href="static/images/cashpulse.svg" sizes="any" type="image/svg+xml">
+    {% endblock %}
+  </head>
+  <body>
+    <div class="header">
+      {% block header %}
+      {% endblock header %}
+    </div>
+    <div id="content">{% block content %}{% endblock content%}</div>
+    <div class="footer">
+        {% block extraFooterContent %} {% endblock extraFooterContent %}
+        {% block footer %}
+        <span>Made with 💙 by <a href="https://github.com/RakshitRabugotra" target="_blank">Rakshit Rabugotra</a></span>
+        {% endblock %}
+    </div>
+  </body>
+</html>

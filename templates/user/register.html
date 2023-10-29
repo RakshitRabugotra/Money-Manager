@@ -1,0 +1,28 @@
+{% extends "layout/default.html" %} 
+
+{% block title %}
+{{super()}} — Register
+{% endblock title %}
+
+{% block content %}
+
+<div class="container form">
+  <h1 class="heading">Register</h1>
+  <form method="POST">
+    {{ form.hidden_tag() }} {{ form.usermail(placeholder="Your Email") }} {{
+    form.username(placeholder="Your Name") }} {{
+    form.password(placeholder="Password") }} {{ form.submit() }}
+  </form>
+
+  {% if error  %}
+    {% if error['code'] == 409 %}
+      <script>alert("User already exists! Try logging in")</script>
+    {% endif %}  
+  {% endif %}
+
+</div>
+{% endblock content %}
+
+{% block extraFooterContent %}
+<a class="href-btn" href="/login">I have an account</a>
+{% endblock extraFooterContent %}

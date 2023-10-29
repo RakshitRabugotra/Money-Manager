@@ -1,0 +1,32 @@
+{% extends "layout/default.html" %} 
+
+{% block title %}
+{{super()}} — Login
+{% endblock title %}
+
+{% block content %}
+
+<div class="container form">
+  <h1 class="heading">Login</h1>
+  <form method="POST">
+    {{ form.hidden_tag() }} 
+    {{ form.usermail(placeholder="Your Email") }}
+    {{ form.password(placeholder="Password") }} 
+    {{ form.submit() }}
+  </form>
+  
+  {% if error  %}
+  {% if error['code'] == 404 %}
+  <script>alert("User not found! Check the credentials")</script>
+  {% elif error['code'] == 401 %}
+  <script>alert("Unauthorized access, incorrect password")</script>
+  {% endif %}
+  {% endif %}
+  
+</div>
+
+{% endblock content %}
+
+{% block extraFooterContent %}
+<a class="href-btn" href="/register">Register instead</a>
+{% endblock extraFooterContent %}
